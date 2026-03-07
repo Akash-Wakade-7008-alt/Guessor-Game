@@ -1,4 +1,3 @@
-
 import java.lang.*;
 import java.util.*;
  class GuessorGameApp
@@ -13,7 +12,6 @@ import java.util.*;
 
 	}
 }
-
 
 class Guessor
 {
