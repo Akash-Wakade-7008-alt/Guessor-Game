@@ -30,15 +30,11 @@ The umpire collects all the guesses and determines which player guessed correctl
 ```
 Guessor-Game
 │
-├── bin
-│   ├── Guessor.class
-│   ├── GuessorGameApp.class
-│   ├── Main.class
-│   ├── Player.class
-│   └── Umpire.class
+├── src
+│   └── GuessorGameApp.java
 │
-├── GuessorGameApp.java
-└── README.md
+├── README.md
+└── .gitignore
 ```
 
 ### Explanation
