@@ -152,3 +152,7 @@ This project can be enhanced with:
 **Akash Wakade**
 
 B.Tech Computer Science student exploring **Java, Web Development, and Open Source Development**.
+
+
+⭐ **Read the Linkden Post:**  
+👉 https://www.linkedin.com/feed/update/urn:li:activity:7435966944056348673/
