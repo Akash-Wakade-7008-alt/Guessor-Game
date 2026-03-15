@@ -47,9 +47,9 @@ Guessor-Game
 
 ### Explanation
 
-* **bin/** → Contains compiled Java bytecode (`.class` files)
-* **GuessorGameApp.java** → Main source file containing all classes
-* **README.md** → Documentation of the project
+* **GuessorGameApp.java** → Main source file containing all classes of the Guessor Game application  
+* **docs/** → Folder containing the generated Javadoc HTML documentation of the project  
+* **README.md** → Provides an overview of the project, structure, and usage
 
 ---
 
