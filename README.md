@@ -158,6 +158,5 @@ B.Tech Computer Science student exploring **Java, Web Development, and Open Sour
 ⭐ **Read the Linkden Post:**  
 👉 https://www.linkedin.com/feed/update/urn:li:activity:7435966944056348673/
 
-
 ⭐ **Read the documentation:**  
 👉 https://akash-wakade-7008-alt.github.io/Guessor-Game/
