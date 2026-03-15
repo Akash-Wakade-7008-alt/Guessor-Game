@@ -33,6 +33,14 @@ Guessor-Game
 ├── src
 │   └── GuessorGameApp.java
 │
+├── docs
+│   ├── index.html
+│   ├── GuessorGameApp.html
+│   ├── Guessor.html
+│   ├── Player.html
+│   ├── Umpire.html
+│   └── ... (other Javadoc generated files)
+│
 ├── README.md
 └── .gitignore
 ```
