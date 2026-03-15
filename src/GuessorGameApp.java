@@ -11,7 +11,7 @@ import java.util.*;
  * player correctly guesses the number.
  *
  * <p>If none of the players guess the correct number, the game
- * ends with no winner.
+ * ends with no winner.</p>
  *
  * @author Akash Wakade
  * @version 1.0
@@ -34,7 +34,7 @@ class GuessorGameApp
  *
  * <p>The Guessor selects a number that the players must try to predict.
  * The selected number is then provided to the Umpire for comparison
- * with the players' predictions.
+ * with the players' predictions.</p>
  */
 class Guessor
 {
@@ -60,7 +60,7 @@ class Guessor
  *
  * <p>Each player attempts to predict the number chosen by the Guessor.
  * The predicted number is sent to the Umpire, who compares it with
- * the Guessor's number to determine if the player has won.
+ * the Guessor's number to determine if the player has won.</p>
  */
 class Player
 {
@@ -145,7 +145,7 @@ class Player
  * </ul>
  *
  * <p>If no player's prediction matches the Guessor's number,
- * the Umpire declares that all players have lost the game.
+ * the Umpire declares that all players have lost the game.</p>
  */
 class Umpire
 {
