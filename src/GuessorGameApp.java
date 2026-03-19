@@ -15,7 +15,7 @@ import java.util.*;
  *   <li>The Umpire gathers all inputs and determines the winner(s).</li>
  * </ol>
  */
-class Main
+public class GuessorGameApp
 {
    public static void main(String[] args)
    {
@@ -48,7 +48,7 @@ class Main
  *   <li>Collecting each player's predicted number.</li>
  * </ul>
  */
-class Player
+public class Player
 {
     /**
      * Total number of players participating in the game.
@@ -100,7 +100,7 @@ class Player
  * <p>The Guessor is responsible for choosing a number that players
  * attempt to predict.</p>
  */
-class Guessor
+ public class Guessor
 {
     /**
      * The number guessed by the Guessor.
@@ -138,7 +138,7 @@ class Guessor
  * <p>If one or more players correctly predict the number, they are
  * declared winners. Otherwise, the game ends with no winners.</p>
  */
-class Umpire
+public class Umpire
 {
     /**
      * Reference to the Player object containing player data.
