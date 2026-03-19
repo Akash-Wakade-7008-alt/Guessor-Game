@@ -1,222 +1,232 @@
-import java.lang.*;
 import java.util.*;
 
 /**
  * Entry point of the Guessor Game application.
  *
- * <p>This program simulates a simple number guessing game.
- * A Guessor chooses a number, and five players attempt to predict it.
- * The Umpire collects the number from the Guessor and the predictions
- * from all players, compares them, and declares the winner if any
- * player correctly guesses the number.</p>
+ * <p>This class initializes all core components of the game:
+ * {@link Guessor}, {@link Player}, and {@link Umpire}, and controls
+ * the overall execution flow.</p>
  *
- * <p>If none of the players guess the correct number, the game
- * ends with no winner.</p>
- *
- * @author Akash Wakade
- * @version 1.0
+ * <p>The sequence of execution is as follows:</p>
+ * <ol>
+ *   <li>The Guessor selects a number.</li>
+ *   <li>The number of players is collected.</li>
+ *   <li>Each player submits their predicted number.</li>
+ *   <li>The Umpire gathers all inputs and determines the winner(s).</li>
+ * </ol>
  */
-class GuessorGameApp
+class Main
 {
-    public static void main(String[] args) {
+   public static void main(String[] args)
+   {
+       Umpire umpire = new Umpire();
+       Player player = new Player();
+       Guessor guessor = new Guessor();
 
-     
+       guessor.guessTheNum();
+       player.collectNoOfPlayers();
+       player.collectPredictedNumFromPlayer();
 
+       umpire.setPlayer(player);
+       umpire.setGuessor(guessor);
 
-        Umpire u = new Umpire();
-
-        u.collectingNumFromGuessor();
-        u.collectingNumFromPlayers();
-        u.comparing();
-    }
+       umpire.collectNumFromGuessor();
+       umpire.collectNumFromPlayer();
+       umpire.comparing();
+   }
 }
 
+/**
+ * Represents the participants of the game.
+ *
+ * <p>This class is responsible for managing player-related data,
+ * including the number of players and their predicted numbers.</p>
+ *
+ * <p>It performs two primary tasks:</p>
+ * <ul>
+ *   <li>Collecting the total number of players participating.</li>
+ *   <li>Collecting each player's predicted number.</li>
+ * </ul>
+ */
+class Player
+{
+    /**
+     * Total number of players participating in the game.
+     */
+    int noOfPlayers;
+
+    /**
+     * Array storing the predicted numbers entered by each player.
+     * The index represents the player (index + 1).
+     */
+    int[] pnum;
+
+    Scanner sc = new Scanner(System.in);
+
+    /**
+     * Prompts the user to enter the number of players.
+     *
+     * <p>This method initializes the {@code pnum} array based on
+     * the number of players provided.</p>
+     */
+    void collectNoOfPlayers()
+    {
+        System.out.println("Enter number of players:");
+        noOfPlayers = sc.nextInt();
+        pnum = new int[noOfPlayers];
+    }
+
+    /**
+     * Collects predicted numbers from each player.
+     *
+     * <p>The method iterates through all players and stores their
+     * inputs in the {@code pnum} array.</p>
+     *
+     * <p>Each index of the array corresponds to a specific player.</p>
+     */
+    void collectPredictedNumFromPlayer()
+    {
+        for(int i = 0; i < noOfPlayers; i++)
+        {
+            System.out.printf("Player %d! Enter the number: ", i + 1);
+            pnum[i] = sc.nextInt();
+        }
+    }
+}
 
 /**
  * Represents the Guessor in the game.
  *
- * <p>The Guessor selects a number that the players must try to predict.
- * The selected number is then provided to the Umpire for comparison
- * with the players' predictions.</p>
+ * <p>The Guessor is responsible for choosing a number that players
+ * attempt to predict.</p>
  */
 class Guessor
 {
+    /**
+     * The number guessed by the Guessor.
+     */
     int gnum;
 
     /**
-     * Prompts the guessor to enter a number.
+     * Prompts the Guessor to input a number.
      *
-     * @return the number guessed by the guessor
+     * <p>This value is later used by the {@link Umpire} to compare
+     * against player predictions.</p>
      */
-    int guessingNum()
+    void guessTheNum()
     {
-        System.out.println("Guessor! Kindly guess any number");
-        Scanner scan = new Scanner(System.in);
-        gnum = scan.nextInt();
-        return gnum;
+        Scanner sc = new Scanner(System.in);
+        System.out.println("Guessor! Kindly guess the number:");
+        gnum = sc.nextInt();
     }
 }
 
-
 /**
- * Represents a player participating in the guessing game.
+ * Acts as the coordinator of the game.
  *
- * <p>Each player attempts to predict the number chosen by the Guessor.
- * The predicted number is sent to the Umpire, who compares it with
- * the Guessor's number to determine if the player has won.</p>
- */
-class Player
-{
-    int pnum;
-
-    /**
-     * Collects prediction from Player 1.
-     *
-     * @return the predicted number
-     */
-    int predictNumByPlayer1()
-    {
-        System.out.println("Player 1! Kindly predict the number from 1 to 100");
-        Scanner scan = new Scanner(System.in);
-        pnum = scan.nextInt();
-        return pnum;
-    }
-
-    /**
-     * Collects prediction from Player 2.
-     *
-     * @return the predicted number
-     */
-    int predictNumByPlayer2()
-    {
-        System.out.println("Player 2! Kindly predict the number from 1 to 100");
-        Scanner scan = new Scanner(System.in);
-        pnum = scan.nextInt();
-        return pnum;
-    }
-
-    /**
-     * Collects prediction from Player 3.
-     *
-     * @return the predicted number
-     */
-    int predictNumByPlayer3()
-    {
-        System.out.println("Player 3! Kindly predict the number from 1 to 100");
-        Scanner scan = new Scanner(System.in);
-        pnum = scan.nextInt();
-        return pnum;
-    }
-
-    /**
-     * Collects prediction from Player 4.
-     *
-     * @return the predicted number
-     */
-    int predictNumByPlayer4()
-    {
-        System.out.println("Player 4! Kindly predict the number from 1 to 100");
-        Scanner scan = new Scanner(System.in);
-        pnum = scan.nextInt();
-        return pnum;
-    }
-
-    /**
-     * Collects prediction from Player 5.
-     *
-     * @return the predicted number
-     */
-    int predictNumByPlayer5()
-    {
-        System.out.println("Player 5! Kindly predict the number from 1 to 100");
-        Scanner scan = new Scanner(System.in);
-        pnum = scan.nextInt();
-        return pnum;
-    }
-}
-
-
-/**
- * Represents the Umpire who manages the game process.
+ * <p>The Umpire is responsible for collecting inputs from both the
+ * {@link Guessor} and {@link Player}, and determining the outcome
+ * of the game.</p>
  *
- * <p>The Umpire is responsible for coordinating the game by:
+ * <p>Responsibilities include:</p>
  * <ul>
- *   <li>Collecting the number guessed by the Guessor</li>
- *   <li>Collecting predictions from all players</li>
- *   <li>Comparing the guessed number with player predictions</li>
- *   <li>Declaring the winner if a match is found</li>
+ *   <li>Retrieving the guessed number from the Guessor.</li>
+ *   <li>Retrieving predicted numbers from all players.</li>
+ *   <li>Comparing values and declaring winner(s).</li>
  * </ul>
- *</p>
-
- * <p>If no player's prediction matches the Guessor's number,
- * the Umpire declares that all players have lost the game.</p>
+ *
+ * <p>If one or more players correctly predict the number, they are
+ * declared winners. Otherwise, the game ends with no winners.</p>
  */
 class Umpire
 {
+    /**
+     * Reference to the Player object containing player data.
+     */
+    Player player;
+
+    /**
+     * Reference to the Guessor object containing the guessed number.
+     */
+    Guessor guessor;
+
+    /**
+     * Stores the number collected from the Guessor.
+     */
     int numFromGuessor;
-    int numFromPlayer1;
-    int numFromPlayer2;
-    int numFromPlayer3;
-    int numFromPlayer4;
-    int numFromPlayer5;
 
     /**
-     * Collects the number guessed by the Guessor.
+     * Stores the predicted numbers collected from players.
      */
-    void collectingNumFromGuessor()
+    int[] numFromPlayer;
+
+    /**
+     * Assigns the Player object to the Umpire.
+     *
+     * @param player the Player instance containing player inputs
+     */
+    void setPlayer(Player player)
     {
-        Guessor g = new Guessor();
-        numFromGuessor = g.guessingNum();
+        this.player = player;
     }
 
     /**
-     * Collects predicted numbers from all players.
+     * Assigns the Guessor object to the Umpire.
+     *
+     * @param guessor the Guessor instance containing the guessed number
      */
-    void collectingNumFromPlayers()
+    void setGuessor(Guessor guessor)
     {
-        Player p1 = new Player();
-        Player p2 = new Player();
-        Player p3 = new Player();
-        Player p4 = new Player();
-        Player p5 = new Player();
-
-        numFromPlayer1 = p1.predictNumByPlayer1();
-        numFromPlayer2 = p2.predictNumByPlayer2();
-        numFromPlayer3 = p3.predictNumByPlayer3();
-        numFromPlayer4 = p4.predictNumByPlayer4();
-        numFromPlayer5 = p5.predictNumByPlayer5();
+        this.guessor = guessor;
     }
 
     /**
-     *</p> Compares the number guessed by the Guessor with the
-     * predictions made by each player and declares the result.
-     *</p>
+     * Retrieves the guessed number from the Guessor.
+     */
+    void collectNumFromGuessor()
+    {
+        numFromGuessor = guessor.gnum;
+    }
+
+    /**
+     * Copies predicted numbers from the Player object into a local array.
+     *
+     * <p>This method ensures that all player inputs are available
+     * for comparison.</p>
+     */
+    void collectNumFromPlayer()
+    {
+        numFromPlayer = new int[player.noOfPlayers];
+
+        for(int i = 0; i < player.noOfPlayers; i++)
+        {
+            numFromPlayer[i] = player.pnum[i];
+        }
+    }
+
+    /**
+     * Compares the Guessor's number with each player's prediction.
+     *
+     * <p>If a match is found, the corresponding player(s) are declared
+     * as winners. If no matches are found, the game concludes with
+     * no winners.</p>
      */
     void comparing()
     {
-        if(numFromGuessor == numFromPlayer1)
+        int flag = 0;
+
+        for(int i = 0; i < player.noOfPlayers; i++)
         {
-            System.out.println("Congratulations Player 1! You have won the game.");
+            if(numFromGuessor == numFromPlayer[i])
+            {
+                System.out.printf("Congratulations player %d, you have won the game\n", i + 1);
+                flag = 1;
+            }
         }
-        else if(numFromGuessor == numFromPlayer2)
+
+        if(flag == 0)
         {
-            System.out.println("Congratulations Player 2! You have won the game.");
-        }
-        else if(numFromGuessor == numFromPlayer3)
-        {
-            System.out.println("Congratulations Player 3! You have won the game.");
-        }
-        else if(numFromGuessor == numFromPlayer4)
-        {
-            System.out.println("Congratulations Player 4! You have won the game.");
-        }
-        else if(numFromGuessor == numFromPlayer5)
-        {
-            System.out.println("Congratulations Player 5! You have won the game.");
-        }
-        else
-        {
-            System.out.println("No one successfully guessed the number!");
+            System.out.println("Game over!! No one has won");
         }
     }
 }
