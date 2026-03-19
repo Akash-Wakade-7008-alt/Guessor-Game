@@ -8,7 +8,7 @@ import java.util.*;
  * A Guessor chooses a number, and five players attempt to predict it.
  * The Umpire collects the number from the Guessor and the predictions
  * from all players, compares them, and declares the winner if any
- * player correctly guesses the number.
+ * player correctly guesses the number.</p>
  *
  * <p>If none of the players guess the correct number, the game
  * ends with no winner.</p>
@@ -19,6 +19,9 @@ import java.util.*;
 class GuessorGameApp
 {
     public static void main(String[] args) {
+
+     
+
 
         Umpire u = new Umpire();
 
@@ -143,7 +146,8 @@ class Player
  *   <li>Comparing the guessed number with player predictions</li>
  *   <li>Declaring the winner if a match is found</li>
  * </ul>
- *
+ *</p>
+
  * <p>If no player's prediction matches the Guessor's number,
  * the Umpire declares that all players have lost the game.</p>
  */
@@ -184,8 +188,9 @@ class Umpire
     }
 
     /**
-     * Compares the number guessed by the Guessor with the
+     *</p> Compares the number guessed by the Guessor with the
      * predictions made by each player and declares the result.
+     *</p>
      */
     void comparing()
     {
