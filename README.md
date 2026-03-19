@@ -31,11 +31,14 @@ The umpire collects all the guesses and determines which player guessed correctl
 Guessor-Game
 │
 ├── src
-│   └── GuessorGameApp.java
+│   ├── Main.java
+│   ├── Player.java
+│   ├── Guessor.java
+│   └── Umpire.java
 │
 ├── docs
 │   ├── index.html
-│   ├── GuessorGameApp.html
+│   ├── Main.html
 │   ├── Guessor.html
 │   ├── Player.html
 │   ├── Umpire.html
