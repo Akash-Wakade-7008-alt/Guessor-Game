@@ -24,24 +24,7 @@ Five players try to predict the number chosen by the guessor.
 The umpire collects all the guesses and determines which player guessed correctly.
 
 ---
-## ⚙️ Local Setup
 
-### Option 1: Clone the Repository
-
-```bash
-git clone https://github.com/Akash-Wakade-7008-alt/Guessor-Game.git
-```
-
-### 📦 Option 2: Download ZIP
-
-Download the project directly:  
-👉 https://github.com/Akash-Wakade-7008-alt/Guessor-Game/releases/download/Guessor-Game-App-v1.0/Guessor-Game.zip
-
-1. Download the ZIP file  
-2. Extract it  
-3. Open `GuessorGameApp.java` in your browser  
-
----
 # 🏗 Project Structure
 
 ```
@@ -105,6 +88,25 @@ Guessor-Game
 4. The umpire compares the guessor’s number with the players’ guesses.
 5. If a player's guess matches the guessor’s number → that player wins.
 6. If no one guesses correctly → no winner is declared.
+
+---
+
+## ⚙️ Local Setup
+
+### Option 1: Clone the Repository
+
+```bash
+git clone https://github.com/Akash-Wakade-7008-alt/Guessor-Game.git
+```
+
+### 📦 Option 2: Download ZIP
+
+Download the project directly:  
+👉 https://github.com/Akash-Wakade-7008-alt/Guessor-Game/releases/download/Guessor-Game-App-v1.0/Guessor-Game.zip
+
+1. Download the ZIP file  
+2. Extract it  
+3. Open `GuessorGameApp.java` in your browser  
 
 ---
 
